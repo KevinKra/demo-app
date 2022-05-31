@@ -1,5 +1,5 @@
 import { Paper, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { styled, css } from "@mui/material/styles";
 
 const Dashboard = () => {
   return (
@@ -16,12 +16,17 @@ const Dashboard = () => {
 
 export default Dashboard;
 
+// todo: explore more generic grid-area/type names for broader application
 const PageLayout = styled("div")<{ variant: "5-column-centered" }>`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "aside-left center-left center center-right aside-right";
-  grid-column-gap: 1rem;
-  height: 100vh;
+  ${(props) =>
+    props.variant === "5-column-centered" &&
+    css`
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-areas: "aside-left center-left center center-right aside-right";
+      grid-column-gap: 1rem;
+      height: 100vh;
+    `}
 `;
 
 const AssetOverview = styled(Paper)<{ width?: string }>`
