@@ -6,9 +6,11 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import CssBaseline from "@mui/material/CssBaseline";
 
 import { ThemeProvider } from "@mui/material/styles";
 import { themes } from "./styles/themes";
+
 // todo - move theme module into separate file
 declare module "@mui/material/styles" {
   interface Theme {
@@ -30,6 +32,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    <CssBaseline />
     <ThemeProvider theme={themes.THEME_LIGHT}>
       <App />
     </ThemeProvider>
