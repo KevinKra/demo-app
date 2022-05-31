@@ -7,12 +7,32 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
+import { ThemeProvider } from "@mui/material/styles";
+import { themes } from "./styles/themes";
+// todo - move theme module into separate file
+declare module "@mui/material/styles" {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status: {
+      danger: string;
+    };
+  }
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={themes.THEME_LIGHT}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
