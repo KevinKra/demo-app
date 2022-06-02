@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route index element={<Dashboard />} />
+        <Route index element={<LoginPage />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
