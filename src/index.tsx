@@ -8,24 +8,36 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { PaletteOptions, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { themes } from "./styles/themes";
 
 // todo - move theme module into separate file
-declare module "@mui/material/styles" {
+// https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
+
+declare module "@mui/material" {
   interface IPalette {
     brands: {
       github: string;
       google: string;
     };
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface PaletteOptions extends IPalette {}
-
   interface CustomTheme {
     status: {
       danger: string;
+    };
+  }
+
+  interface TypographyPropsVariantOverrides {
+    poster: true;
+    h1: false;
+    h2: false;
+    h3: false;
+  }
+
+  interface PaletteOptions {
+    brands: {
+      github: string;
+      google: string;
     };
   }
 

@@ -27,7 +27,7 @@ const Wrapper = styled(Button)<{ icon?: IIcon }>`
   text-transform: none;
   height: 3rem;
   // todo: base palette not found, just the custom stuff added.
-  ${(props) => `background-color: ${props.theme.palette.brands.github}`};
+  ${(props) => `background-color: ${props.theme.palette.secondary}`};
 
   .styled-button-icon {
     margin-right: 0.5rem;
