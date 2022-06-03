@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -14,13 +15,22 @@ import { themes } from "./styles/themes";
 // todo - move theme module into separate file
 // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
 
+interface CustomPalette {
+  brands: {
+    github: string;
+    google: string;
+  };
+}
+
 declare module "@mui/material" {
-  interface IPalette {
-    brands: {
-      github: string;
-      google: string;
-    };
+  interface Palette extends CustomPalette {
+    // * feeds typing to props in components
   }
+
+  interface PaletteOptions extends CustomPalette {
+    // * feeds typing to mui createTheme
+  }
+
   interface CustomTheme {
     status: {
       danger: string;
@@ -34,20 +44,9 @@ declare module "@mui/material" {
     h3: false;
   }
 
-  interface PaletteOptions {
-    brands: {
-      github: string;
-      google: string;
-    };
-  }
+  interface Theme extends CustomTheme {}
 
-  interface Theme extends CustomTheme {
-    palette: PaletteOptions;
-  }
-
-  interface ThemeOptions extends CustomTheme {
-    palette?: PaletteOptions;
-  }
+  interface ThemeOptions extends CustomTheme {}
 }
 
 const root = ReactDOM.createRoot(

@@ -42,7 +42,7 @@ const Wrapper = styled(Button)<{ icon?: IIcon }>`
     `background-color: ${props.theme.palette.brands[props.icon]}`};
   ${(props) =>
     props.icon === "email" &&
-    `background-color: ${props.theme.palette.secondary}`};
+    `background-color: ${props.theme.palette.secondary.main}`};
 `;
 
 // //* leverages both local styled props and global mui theme props.
