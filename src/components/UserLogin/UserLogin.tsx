@@ -11,7 +11,7 @@ const UserLogin = () => {
         <Typography>Stackhawk</Typography>
         <Typography variant="overline">Login With</Typography>
         <div className="user-login-buttons-container">
-          <StyledButton text="Github" icon="github" variant="outlined" />
+          <StyledButton text="Github" icon="github" variant="contained" />
           <StyledButton text="Google" icon="google" variant="contained" />
           <StyledButton text="Email" icon="email" variant="contained" />
         </div>

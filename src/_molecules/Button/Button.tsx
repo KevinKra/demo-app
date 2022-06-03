@@ -1,4 +1,5 @@
-import { styled, Typography } from "@mui/material";
+import { styled, Theme, Typography } from "@mui/material";
+// import { css } from "@emotion/react";
 import { Button, ButtonProps } from "@mui/material";
 import { FC } from "react";
 import StyledIcon, { IIcon } from "../../_atoms/Icon/Icon";
@@ -11,8 +12,10 @@ interface IButton extends ButtonProps {
 
 const StyledButton: FC<IButton> = ({ icon, text, ...args }) => {
   return (
-    <Wrapper {...args}>
-      {icon && <StyledIcon icon={icon} size="lg" />}
+    <Wrapper icon={icon} {...args}>
+      {icon && (
+        <StyledIcon className="styled-button-icon" icon={icon} size="lg" />
+      )}
       {text}
     </Wrapper>
   );
@@ -20,6 +23,22 @@ const StyledButton: FC<IButton> = ({ icon, text, ...args }) => {
 
 export default StyledButton;
 
-const Wrapper = styled(Button)`
+const Wrapper = styled(Button)<{ icon?: IIcon }>`
   text-transform: none;
+  height: 3rem;
+
+  //* leverages both local styled props and global mui theme props.
+  ${(props) =>
+    props.icon === "github" &&
+    `background-color: ${props.theme.palette.brands[props.icon]}`};
+  ${(props) =>
+    props.icon === "google" &&
+    `background-color: ${props.theme.palette.brands[props.icon]}`};
+  ${(props) =>
+    props.icon === "email" &&
+    `background-color: ${props.theme.palette.secondary}`};
+
+  .styled-button-icon {
+    margin-right: 0.5rem;
+  }
 `;

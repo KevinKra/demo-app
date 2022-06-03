@@ -1,12 +1,13 @@
 import { createTheme } from "@mui/material/styles";
 
 export const THEME_DARK = createTheme({
-  palette: {
-    primary: {
-      main: "rgba(150,150,150,1)",
-    },
-  },
   status: {
-    danger: "rgba(0,0,0,1)",
+    danger: "#555",
+  },
+  palette: {
+    brands: {
+      github: "#151413",
+      google: "#4285f4",
+    },
   },
 });

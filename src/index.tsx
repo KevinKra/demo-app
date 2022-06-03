@@ -8,21 +8,33 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { ThemeProvider } from "@mui/material/styles";
+import { PaletteOptions, ThemeProvider } from "@mui/material/styles";
 import { themes } from "./styles/themes";
 
 // todo - move theme module into separate file
 declare module "@mui/material/styles" {
-  interface Theme {
+  interface IPalette {
+    brands: {
+      github: string;
+      google: string;
+    };
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface PaletteOptions extends IPalette {}
+
+  interface CustomTheme {
     status: {
       danger: string;
     };
   }
-  // allow configuration using `createTheme`
-  interface ThemeOptions {
-    status: {
-      danger: string;
-    };
+
+  interface Theme extends CustomTheme {
+    palette: PaletteOptions;
+  }
+
+  interface ThemeOptions extends CustomTheme {
+    palette?: PaletteOptions;
   }
 }
 
