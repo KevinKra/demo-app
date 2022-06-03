@@ -5,6 +5,8 @@ export const THEME_DARK = createTheme({
     danger: "#555",
   },
   palette: {
+    // primary?: '#000',
+    // secondary?: "123456",
     brands: {
       github: "#151413",
       google: "#4285f4",
