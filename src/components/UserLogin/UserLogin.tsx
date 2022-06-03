@@ -1,4 +1,8 @@
-import { Button, Link, styled, Typography } from "@mui/material";
+import { Link, styled, Typography } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import StyledButton from "../../_molecules/Button/Button";
 
 const UserLogin = () => {
   return (
@@ -7,9 +11,9 @@ const UserLogin = () => {
         <Typography>Stackhawk</Typography>
         <Typography variant="overline">Login With</Typography>
         <div className="user-login-buttons-container">
-          <Button variant="contained">Github</Button>
-          <Button variant="contained">Google</Button>
-          <Button variant="contained">Email</Button>
+          <StyledButton text="Github" icon="github" variant="outlined" />
+          <StyledButton text="Google" icon="google" variant="contained" />
+          <StyledButton text="Email" icon="email" variant="contained" />
         </div>
         <Typography>Or Login with</Typography>
         <Link>Single SignOn</Link>
