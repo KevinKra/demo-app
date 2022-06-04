@@ -31,8 +31,8 @@ const UserLogin = () => {
 export default UserLogin;
 
 const Wrapper = styled("div")`
-  border: 1px solid red;
   display: grid;
+  background-color: ${({ theme }) => theme.palette.background.paper};
 
   .user-login-buttons-container {
     display: grid;

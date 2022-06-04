@@ -1,4 +1,4 @@
-import { Link, styled, Typography } from "@mui/material";
+import { Link, Paper, styled, Typography } from "@mui/material";
 import UserLogin from "../../components/UserLogin/UserLogin";
 
 const LoginPage = () => {
@@ -6,13 +6,17 @@ const LoginPage = () => {
     <PageLayout>
       <Wrapper>
         <LearnMoreWidget>
-          <Typography variant="h5" fontWeight={500}>
+          <Typography color="primary" variant="h5" fontWeight={500}>
             StackHawk
           </Typography>
-          <Typography className="learn-more-widget-italic" variant="caption">
+          <Typography
+            color="primary"
+            className="learn-more-widget-italic"
+            variant="caption"
+          >
             [ /stak/ /hôk/ ]
           </Typography>
-          <Typography>
+          <Typography color="secondary">
             Automate application scanning throughout your pipeline to find and
             fix security bugs before they hit production.
           </Typography>
@@ -30,6 +34,7 @@ const PageLayout = styled("div")`
   display: grid;
   place-items: center;
   min-height: 100vh;
+  background-color: ${({ theme }) => theme.palette.background.default};
 `;
 
 const Wrapper = styled("div")`
@@ -39,8 +44,6 @@ const Wrapper = styled("div")`
 `;
 
 const LearnMoreWidget = styled("div")`
-  border: 1px solid red;
-
   // TODO add italic optional prop to Typography component, then remove this
   .learn-more-widget-italic {
     font-style: italic;

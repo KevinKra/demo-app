@@ -9,9 +9,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { ThemeProvider } from "@mui/material/styles";
-import { themes } from "./styles/themes";
-
 // todo - move theme module into separate file
 // https://mui.com/material-ui/customization/typography/#adding-amp-disabling-variants
 
@@ -56,9 +53,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <CssBaseline />
-    <ThemeProvider theme={themes.THEME_LIGHT}>
-      <App />
-    </ThemeProvider>
+    <App />
   </React.StrictMode>
 );
 
